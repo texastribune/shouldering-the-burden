@@ -1,0 +1,56 @@
+.main-header {
+  margin-bottom: 1em;
+
+  h2 {
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: .5em;
+  }
+}
+
+.section-header {
+  // margin: 1.25em;
+
+  h3 {
+    font-size: 1.625em;
+    font-weight: 800;
+  }
+
+  h4 {
+    font-size: 1.25em;
+  }
+}
+
+.sub-section-header {
+  h4 {
+    font-size: 1em;
+    font-weight: 800;
+    margin-bottom: .5em;
+
+    // @include media($desktop) {
+    //   font-size: 1.25em;
+    // }
+  }
+}
+
+.prose {
+  p {
+    font-family: $base-serif;
+    line-height: 1.4;
+    margin-bottom: 2em;
+  }
+}
+
+.disclaimer {
+  margin-top: 2em;
+
+  p {
+    font-family: $base-sans-serif;
+    font-size: .875em;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1em;
+  }
+}

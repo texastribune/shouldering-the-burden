@@ -1,0 +1,19 @@
+.content-wrapper {
+  @include outer-container;
+  padding: .25em .5em;
+}
+
+section.person {
+  background-color: papayawhip;
+  
+  .map {
+    background-color: lightsteelblue;
+    height: 100px;
+    width: 100px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+}
