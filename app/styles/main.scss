@@ -4,5 +4,8 @@
 @import 'newsapps-styles/initialize';
 @import 'newsapps-styles/theme/theme';
 
+@import 'custom/layout';
+
 @import 'newsapps-styles/layout/masthead';
+@import 'newsapps-styles/layout/banner';
 @import 'newsapps-styles/layout/footers/small';
