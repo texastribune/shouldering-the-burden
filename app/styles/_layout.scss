@@ -1,4 +1,4 @@
-$outerpadding: .625em;
+$outerpadding: .75em;
 
 .content-wrapper {
   @include outer-container;
@@ -9,14 +9,24 @@ section.person {
   // background-color: papayawhip;
   
   .map {
-    background-color: lightsteelblue;
+    // background-color: lightsteelblue;
     height: 100px;
     width: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  
   img {
-    width: 100vw;
     margin-left: (-$outerpadding);
+    width: 100vw;
   }
-
 }
