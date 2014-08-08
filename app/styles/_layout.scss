@@ -7,15 +7,22 @@ $outerpadding: .75em;
 
 section.person {
   // background-color: papayawhip;
+  margin-top: 4em;
   
+  header {
+    @include span-columns(10);
+    margin-right: 0;
+  }
   .map {
+    @include span-columns(2);
     // background-color: lightsteelblue;
-    height: 100px;
-    width: 100px;
+    // height: 75px;
+    // width: 75px;
+    margin-top: 0.25em;
 
     img {
-      width: 100%;
       height: 100%;
+      width: 100%;
     }
   }
 
