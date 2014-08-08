@@ -1,10 +1,12 @@
+$outerpadding: .625em;
+
 .content-wrapper {
   @include outer-container;
-  padding: .25em .5em;
+  padding: $outerpadding;
 }
 
 section.person {
-  background-color: papayawhip;
+  // background-color: papayawhip;
   
   .map {
     background-color: lightsteelblue;
@@ -13,7 +15,8 @@ section.person {
   }
 
   img {
-    width: 100%;
+    width: 100vw;
+    margin-left: (-$outerpadding);
   }
 
 }

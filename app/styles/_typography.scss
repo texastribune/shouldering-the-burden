@@ -38,7 +38,6 @@
   p {
     font-family: $base-serif;
     line-height: 1.4;
-    margin-bottom: 2em;
   }
 }
 
@@ -53,4 +52,13 @@
     line-height: 1.2;
     margin-bottom: 1em;
   }
+}
+
+.graf-header {
+  color: rgb(34, 34, 34);
+  font: 700 0.875em helvetica;
+  letter-spacing: 1px;
+  line-height: 1.4em;
+  text-align: left;
+  text-transform: uppercase;
 }
