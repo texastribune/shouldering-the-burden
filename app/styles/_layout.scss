@@ -5,6 +5,11 @@ $outerpadding: .75em;
   padding: $outerpadding;
 }
 
+.yellow-bar {
+  background-color: #ffc200;
+  height: 4px;
+}
+
 section.person {
   // background-color: papayawhip;
   clear: both;
@@ -44,18 +49,17 @@ figure {
   margin-left: (-$outerpadding);
   width: 100vw;
 
+  @include media($desktop) {
+    margin-left: 0;
+    width: 100%;
+  }
+
   figcaption {
     padding-left: $outerpadding;
 
     @include media($desktop) {
       padding-left: 0;
     }
-  }
-
-  @include media($desktop) {
-    margin-left: 0;
-    width: 100%;
-    // @include span-columns(6);
   }
 
   img {
