@@ -9,7 +9,7 @@ section.person {
   // background-color: papayawhip;
   clear: both;
   margin-top: 6em;
-  
+
   header {
     float: left;
     width: calc(100% - 80px);
@@ -31,7 +31,7 @@ section.person {
 .prose {
   @include media($desktop) {
     @include span-columns(8 of 12);
-    @include shift(2);    
+    @include shift(2);
   }
 }
 
