@@ -64,57 +64,59 @@
 }
 
 .nav-bar {
-  color: $white;
-  background: $white;
-  font: 500 0.8em Helvetica;
+  @include fill-parent;
+  clear: both;
+  @include span-columns(12 of 12);
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  font: 500 .8em Helvetica;
   letter-spacing: 1px;
   line-height: 1.2em;
   text-align: center;
-  position: static;
-  .selected {
-    background: #4aa1cc;
-  }
+
+
   ul {
     display: block;
     list-style-type: none;
     margin: 0;
     width: 100%;
-    max-width: 1088px;
+
     li {
       @include span-columns(4);
       @include omega(3n);
-      background: #4aa1cc;
-      margin-top: 0.25em;
-      &:active {
-        background: #4aa1cc;
-      }
+      margin-top: 1em !important;
+
+      &:active,
       &:hover {
-        background: #4aa1cc;
+        &:nth-of-type(1) { background-color: $story-red; }
+        &:nth-of-type(2) { background-color: $story-purple; }
+        &:nth-of-type(3) { background-color: $story-blue; }
+        &:nth-of-type(4) { background-color: $story-green; }
+        &:nth-of-type(5) { background-color: $story-orange; }
+        &:nth-of-type(6) { background-color: $story-slate; }
       }
+
       img {
         display: block;
         max-width: 100%;
         width: 100%;
         margin-top:0;
       }
-      @include media($desktop) {
-        background: $white;
-        margin-top: 0;
-      }
+
     }
+
     .nav-link {
-      color: #4aa1cc;
+      color: #000;
       font-weight: bold;
       width: 100%;
-      margin: 0.75em 0;
-    }
-    @include media($desktop) {
-      background: $white;
+      margin: .75em 0;
     }
   }
+
   a {
     text-decoration: none;
-    text-shadow: none;
   }
 }
 
