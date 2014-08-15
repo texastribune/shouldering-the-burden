@@ -1,4 +1,7 @@
-$outerpadding: .75em;
+$outerpadding: .5em;
+$personpadding: .5em;
+$borderwidth: 2px;
+$totalpadding: $outerpadding + $personpadding + em($borderwidth);
 
 .content-wrapper {
   @include outer-container;
@@ -12,8 +15,13 @@ $outerpadding: .75em;
 
 section.person {
   // background-color: papayawhip;
+
+  background-color: transparentize(papayawhip, 0.8);
+  border: $borderwidth solid papayawhip;
+  border-top: 10px solid papayawhip;
   clear: both;
   margin-top: 6em;
+  padding: $personpadding;
 
   header {
     float: left;
@@ -46,16 +54,17 @@ section.person {
 
 figure {
   clear: both;
-  margin-left: (-$outerpadding);
+  margin-left: (-$totalpadding);
   width: 100vw;
 
   @include media($desktop) {
     margin-left: 0;
-    width: 100%;
+    // width: 100%;
+    @include span-columns(4);
   }
 
   figcaption {
-    padding-left: $outerpadding;
+    padding-left: $totalpadding;
 
     @include media($desktop) {
       padding-left: 0;
