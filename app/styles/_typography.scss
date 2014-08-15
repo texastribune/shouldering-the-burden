@@ -39,10 +39,6 @@
     font-weight: 800;
     margin-bottom: .5em;
     margin-top: 0.25em;
-
-    // @include media($desktop) {
-    //   font-size: 1.25em;
-    // }
   }
 }
 
@@ -66,13 +62,12 @@
   }
 }
 
-.graf-header {
+h4.graf-header {
   color: rgb(34, 34, 34);
-  font: 700 0.875em helvetica;
+  font: 300 0.875em helvetica;
   letter-spacing: 1px;
   line-height: 1.4em;
   text-align: left;
-  text-transform: uppercase;
 }
 
 .caption {
