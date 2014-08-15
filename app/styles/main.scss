@@ -62,3 +62,59 @@
     width: 50%;
   }
 }
+
+.nav-bar {
+  color: $white;
+  background: $white;
+  font: 500 0.8em Helvetica;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  text-align: center;
+  position: static;
+  .selected {
+    background: #4aa1cc;
+  }
+  ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+    max-width: 1088px;
+    li {
+      @include span-columns(4);
+      @include omega(3n);
+      background: #4aa1cc;
+      margin-top: 0.25em;
+      &:active {
+        background: #4aa1cc;
+      }
+      &:hover {
+        background: #4aa1cc;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        margin-top:0;
+      }
+      @include media($desktop) {
+        background: $white;
+        margin-top: 0;
+      }
+    }
+    .nav-link {
+      color: #4aa1cc;
+      font-weight: bold;
+      width: 100%;
+      margin: 0.75em 0;
+    }
+    @include media($desktop) {
+      background: $white;
+    }
+  }
+  a {
+    text-decoration: none;
+    text-shadow: none;
+  }
+}
+
