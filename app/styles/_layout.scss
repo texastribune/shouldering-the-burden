@@ -1,23 +1,85 @@
 $outerpadding: .75em;
 $personpadding: 1em;
-$borderwidth: 2px;
+$borderwidth: 1px;
 $totalpadding: $outerpadding + $personpadding + em($borderwidth);
 
 @mixin box-styles($color) {
-    background-color: transparentize($color, .97);
-    border: $borderwidth solid $color;
-    border-top: 10px solid $color;
+  background-color: transparentize($color, .97);
+  border: $borderwidth solid $color;
+  border-top: 10px solid $color;
 }
+
+div.banner {
+  height: 500px !important;
+  z-index: 0 !important;
+  position: relative;
+  border-bottom: 2px solid #000;
+
+  @include media($mobile) {
+    height: calc(75vmax - 100px);
+  }
+}
+
+.grand-header-image {
+  background-image: url(http://placecorgi.com/600/500) !important;
+  background-position: center center;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 
 .content-wrapper {
   @include outer-container;
   padding: $outerpadding;
+  @include media($desktop) {
+    margin-top: -400px;
+    z-index: 10;
+    position: relative;
+  }
 }
 
-.yellow-bar {
-  background-color: #ffc200;
-  height: 4px;
+
+header.title {
+  @include media($desktop) {
+    @include shift(1);
+    @include span-columns(4);
+    margin-right: 0;
+    margin-top: 150px;
+  }
 }
+
+.intro {
+  background-color: #FFF !important;
+  font-size: 1em;
+  padding: $personpadding;
+
+  @include media($desktop) {
+    @include span-columns(6);
+    @include shift(1);
+    border-top: 10px solid #000 !important;
+    //http://css-tricks.com/examples/GradientBorder/
+    background-image: -webkit-gradient(linear, #000 0%, #000 100%);
+    background-image: -webkit-linear-gradient(#000 0%, #000 100%);
+    background-image:
+        -moz-linear-gradient(#000 0%, #000 100%),
+        -moz-linear-gradient(#000 0%, #000 100%);
+    background-image:
+        -o-linear-gradient(#000 0%, #000 100%),
+        -o-linear-gradient(#000 0%, #000 100%);
+    background-image:
+        linear-gradient(#000 0%, #000 100%),
+        linear-gradient(#000 0%, #000 100%);
+    -moz-background-size: 2px 100%;
+    background-size: 2px 355px;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+  }
+}
+
 
 section.person {
 
@@ -42,30 +104,25 @@ section.person {
   padding: $personpadding;
 
   header {
-    margin-bottom: .75em;
-    float: left;
-    width: calc(100% - 80px);
+    padding-top: 0.125em;
+    margin-bottom: 1.5em;
+    float: right;
+    width: calc(100% - 100px);
   }
 
   .map {
-    float: right;
+    float: left;
     margin-top: .35em;
 
     img {
-      float: right;
-      height: 60px;
-      width: 60px;
+      float: left;
+      height: 70px;
+      width: 70px;
     }
   }
 }
 
 .prose { }
-
-.intro {
-  font-size: 1em;
-  @include span-columns(8 of 12);
-  @include shift(2);
-}
 
 figure {
   clear: both;
@@ -81,6 +138,7 @@ figure {
     padding-left: $totalpadding;
 
     @include media($desktop) {
+      text-align: right;
       padding-left: 0;
     }
   }
