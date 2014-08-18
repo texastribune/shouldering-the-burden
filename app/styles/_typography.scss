@@ -1,9 +1,10 @@
 h1 {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 2em;
+  font-size: 2.125em;
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: .5em;
+  display: inline-block;
   @include media($desktop) {
     color: white;
     text-shadow: black 1px 1px 0;
@@ -35,11 +36,12 @@ h1 {
   margin-top: 0.25em;
   a {
     font-weight: 700;
-    @include media($desktop) { color: #fff; }
+    @include media($desktop) { color: lighten($lt-gray, 15%); }
   }
 
   &.date {
     font-weight: 300;
+    margin-top: 0.625em;
   }
 }
 

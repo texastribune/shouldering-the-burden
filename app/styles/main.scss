@@ -26,10 +26,6 @@
 .share-row {
   margin-top: 1.5em;
   width: 100%;
-  @include media($desktop) {
-    border: 1px solid rgb(204, 204, 204);
-  }
-
   border-top: 1px solid rgb(204, 204, 204);
   border-bottom: 1px solid rgb(204, 204, 204);
   font-size: .9em;
@@ -44,9 +40,10 @@
   a {
     float: left;
     width: 50%;
-    color: rgb(119, 119, 119);
-    // background-color: transparentize(#fff, 0.35);
-    background-color: white;
+    @include media($desktop) {
+      color: #fff;
+      text-shadow: black 0.5px 0.5px 0;
+    }
     margin: 0;
 
     &:first-of-type {
@@ -54,9 +51,11 @@
     }
 
     &:hover {
-      color: rgb(17, 17, 17);
-      // background-color: transparentize(#fff, 0.2);
-      background-color: white;
+      @include media($desktop) {
+        color: $lt-gray;
+      }
+      color: #000;
+
       text-decoration: none;
     }
   }
