@@ -1,6 +1,6 @@
 # Shouldering the Burden
 
-TODO: What's the project about?
+Shouldering the Burden (renamed to Bypassed by the Miracle) is a weeklong series of stories about people who have been left out of the economic growth of the Texas Miracle. This part of the story, *No Miracle Here*, is a series of vignettes about these people.
 
 ## Setup
 
