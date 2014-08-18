@@ -3,6 +3,9 @@ $personpadding: 1em;
 $borderwidth: 1px;
 $totalpadding: $outerpadding + $personpadding + em($borderwidth);
 
+$topmargin: 450px;
+
+
 @mixin box-styles($color) {
   background-color: transparentize($color, .97);
   border: $borderwidth solid $color;
@@ -13,7 +16,7 @@ div.banner {
   height: 500px !important;
   z-index: 0 !important;
   position: relative;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
 
   @include media($mobile) {
     height: calc(75vmax - 100px);
@@ -36,7 +39,7 @@ div.banner {
   @include outer-container;
   padding: $outerpadding;
   @include media($desktop) {
-    margin-top: -400px;
+    margin-top: -($topmargin);
     z-index: 10;
     position: relative;
   }
@@ -48,7 +51,7 @@ header.title {
     @include shift(1);
     @include span-columns(4);
     margin-right: 0;
-    margin-top: 150px;
+    margin-top: 200px;
   }
 }
 
@@ -56,25 +59,20 @@ header.title {
   background-color: #FFF !important;
   font-size: 1em;
   padding: $personpadding;
+  padding-top: 0;
 
   @include media($desktop) {
     @include span-columns(6);
     @include shift(1);
+    padding-top: $personpadding;
     border-top: 10px solid #000 !important;
-    //http://css-tricks.com/examples/GradientBorder/
+    // http://css-tricks.com/examples/GradientBorder/
     background-image: -webkit-gradient(linear, #000 0%, #000 100%);
     background-image: -webkit-linear-gradient(#000 0%, #000 100%);
     background-image:
-        -moz-linear-gradient(#000 0%, #000 100%),
-        -moz-linear-gradient(#000 0%, #000 100%);
-    background-image:
-        -o-linear-gradient(#000 0%, #000 100%),
-        -o-linear-gradient(#000 0%, #000 100%);
-    background-image:
         linear-gradient(#000 0%, #000 100%),
         linear-gradient(#000 0%, #000 100%);
-    -moz-background-size: 2px 100%;
-    background-size: 2px 355px;
+    background-size: 1px 404px;
     background-position: 0 0, 100% 0;
     background-repeat: no-repeat;
   }
@@ -103,6 +101,10 @@ section.person {
   margin-top: 3em;
   padding: $personpadding;
 
+  @include media($desktop) {
+    padding-bottom: 3em;
+  }
+
   header {
     padding-top: 0.125em;
     margin-bottom: 1.5em;
@@ -127,6 +129,7 @@ section.person {
 figure {
   clear: both;
   margin-left: (-$totalpadding);
+  position: relative;
   width: 100vw;
 
   @include media($desktop) {
@@ -135,11 +138,16 @@ figure {
   }
 
   figcaption {
-    padding-left: $totalpadding;
+    position: absolute;
+    padding: 0.5em 1em;
+    margin-top: -1px;
+    color: #fff;
+    background-color: transparentize(#000, 0.5);
+    bottom: 0;
+    right: 0;
 
     @include media($desktop) {
       text-align: right;
-      padding-left: 0;
     }
   }
 
