@@ -13,18 +13,17 @@ $topmargin: 450px;
 }
 
 div.banner {
-  height: 500px !important;
-  z-index: 0 !important;
   position: relative;
   border-bottom: 1px solid #000;
+  height: 300px;
 
-  @include media($mobile) {
-    height: calc(75vmax - 100px);
+  @include media($desktop) {
+    height: 500px !important;
   }
 }
 
 .grand-header-image {
-  background-image: url(http://placecorgi.com/600/500) !important;
+  background-image: url('http://placecorgi.com/600/500') !important;
   background-position: center center;
   background-size: cover;
   bottom: 0;
@@ -38,6 +37,7 @@ div.banner {
 .content-wrapper {
   @include outer-container;
   padding: $outerpadding;
+
   @include media($desktop) {
     margin-top: -($topmargin);
     z-index: 10;
@@ -47,11 +47,18 @@ div.banner {
 
 
 header.title {
+  text-align: center;
+
+  h1 {
+    margin-top: 0;
+  }
+
   @include media($desktop) {
     @include shift(1);
     @include span-columns(4);
+    text-align: left;
     margin-right: 0;
-    margin-top: 200px;
+    margin-top: 225px;
   }
 }
 
@@ -84,10 +91,11 @@ section.person {
   @include media($desktop) {
     @include shift(1);
     @include span-columns(10 of 12);
-      .prose {
-        @include shift(1);
-        @include span-columns(10 of 12);
-      }
+
+    .prose {
+      @include shift(1);
+      @include span-columns(10 of 12);
+    }
   }
 
   &:nth-of-type(1) { @include box-styles($story-red); }
@@ -143,7 +151,7 @@ figure {
     margin-top: -1px;
     color: #fff;
     background-color: transparentize(#000, 0.5);
-    bottom: 0;
+    bottom: 0.5px;
     right: 0;
 
     @include media($desktop) {
