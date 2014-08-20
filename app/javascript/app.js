@@ -1,3 +1,3 @@
-smoothScroll.init({
-  offset: 30
-});
+if (Modernizr.cssvwunit == false) {
+  $('body').addClass('fallback');
+}

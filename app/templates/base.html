@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +17,11 @@
   <!-- build:css(.tmp) /styles/main.css -->
   <link rel="stylesheet" href="/styles/main.css">
   <!-- endbuild -->
+    <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <link href="/css/ie.css" rel="stylesheet">
+  <![endif]-->
 </head>
 <body>
 
@@ -23,10 +31,12 @@
       <a href="//www.texastribune.org/"><img class="trib-logo" alt="The Texas Tribune" src="/images/tt-logo-white.png"></a>
   </div>
 </header>
-<div class="banner">
-  <div class="grand-header-image"></div>
-  <header class="grand-header">
-  </header>
+<div class="banner-border">
+  <div class="banner">
+    <div class="grand-header-image"></div>
+    <header class="grand-header">
+    </header>
+  </div>
 </div>
 
 <div class="story-container content-wrapper">
@@ -70,7 +80,7 @@
 </script>
 
 <!-- build:js({app,.tmp}) scripts/main.js -->
-<script src="/javascript/smooth-scroll.js"></script>
+<script src="/javascript/modernizr.js"></script>
 <script src="/javascript/app.js"></script>
 <!-- endbuild -->
 

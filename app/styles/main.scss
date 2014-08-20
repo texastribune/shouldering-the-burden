@@ -13,6 +13,9 @@
 @import 'newsapps-styles/layout/banner';
 @import 'newsapps-styles/layout/footers/basic';
 
+@import '_ie';
+
+
 .row {
   @include row();
 }

@@ -1,0 +1,33 @@
+.fallback,
+.no-cssvwunit,
+.lt-ie9,
+.lt-ie8,
+.lt-ie7 {
+
+  .banner-border { border: none; }
+
+  section.person {
+    border-width: 1px;
+    border-top-width: 10px;
+    border-style: solid;
+    border-color: #000;
+
+    &#person-1 { @include box-styles($story-red); }
+    &#person-2 { @include box-styles($story-purple); }
+    &#person-3 { @include box-styles($story-blue); }
+    &#person-4 { @include box-styles($story-green); }
+    &#person-5 { @include box-styles($story-orange); }
+    &#person-6 { @include box-styles($story-slate); }
+  }
+
+  figure {
+    width: 100%;
+    margin-left: 0;
+
+    figcaption {
+      background-color: #000;
+    }
+  }
+
+}
+
