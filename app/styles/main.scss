@@ -13,7 +13,7 @@
 @import 'newsapps-styles/layout/banner';
 @import 'newsapps-styles/layout/footers/basic';
 
-@import '_ie';
+@import '_fallback';
 
 
 .row {
@@ -43,6 +43,7 @@
   a {
     float: left;
     width: 50%;
+    color: #777;
     @include media($desktop) {
       color: #fff;
       text-shadow: black 0.5px 0.5px 0;
