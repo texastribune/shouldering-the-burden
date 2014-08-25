@@ -138,6 +138,16 @@ section.person {
 }
 
 .prose { }
+.disclosure {
+  border-top: 1px solid #fcc10f;
+  margin-top: 3em;
+  padding-top: 1em;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  @include media($desktop) {
+    @include shift(1);
+    @include span-columns(10 of 12);
+  }
+}
 
 figure {
   clear: both;
