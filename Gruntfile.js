@@ -1,3 +1,5 @@
+// Generated on 2014-08-25 using
+// generator-tt-newsapps 0.0.0
 'use strict';
 
 // # Globbing
@@ -39,6 +41,16 @@ module.exports = function (grunt) {
     },
 
     clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= config.dist %>/*',
+            '!<%= config.dist %>/.git*'
+          ]
+        }]
+    },
       server: '.tmp'
     },
 
@@ -60,6 +72,94 @@ module.exports = function (grunt) {
             ];
           }
         }
+      }
+    },
+
+    copy: {
+      dist: {
+        expand: true,
+        dot: true,
+        cwd: '<%= config.app %>',
+        dest: '<%= config.dist %>',
+        src: [
+          '*.{ico,png,txt}',
+          'images/{,*/}*.webp',
+          'styles/fonts/{,*/}*.*'
+        ]
+      },
+      compiledHtml: {
+        expand: true,
+        dot: true,
+        cwd: '.tmp',
+        dest: '<%= config.dist %>',
+        src: [
+          '{,*/}*.html',
+        ]
+      },
+      styles: {
+        expand: true,
+        dot: true,
+        cwd: '<%= config.app %>/styles',
+        dest: '.tmp/styles/',
+        src: '{,*/}*.css'
+      },
+      socialImage: {
+        expand: true,
+        dot: true,
+        cwd: '<%= config.app %>',
+        dest: '<%= config.dist %>',
+        src: 'images/social.jpg'
+      }
+    },
+
+    filerev: {
+      images: {
+        src: '<%= config.dist %>/images/{,*/}*.*'
+      },
+      scripts: {
+        src: '<%= config.dist %>/scripts/{,*/}*.js'
+      },
+      styles: {
+        src: '<%= config.dist %>/styles/{,*/}*.css'
+      },
+      fonts: {
+        src: '<%= config.dist %>/styles/fonts/{,*/}*.*'
+      },
+      icons: {
+        src: '<%= config.dist %>/*.{ico,png}'
+      }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          conservativeCollapse: true,
+          removeAttributeQuotes: true,
+          removeCommentsFromCDATA: true,
+          removeEmptyAttributes: true,
+          removeOptionalTags: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.dist %>',
+          src: '{,*/}*.html',
+          dest: '<%= config.dist %>'
+        }]
+      }
+    },
+
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/images',
+          src: ['{,*/}*.{gif,jpeg,jpg,png}', '!social.jpg'],
+          dest: '<%= config.dist %>/images'
+        }]
       }
     },
 
@@ -96,6 +196,15 @@ module.exports = function (grunt) {
           'bower_components'
         ]
       },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles',
+          src: ['*.scss'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
       server: {
         files: [{
           expand: true,
@@ -105,6 +214,24 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       }
+    },
+
+    useminPrepare: {
+      options: {
+        dest: '<%= config.dist %>'
+      },
+      html: '.tmp/index.html'
+    },
+
+    usemin: {
+      options: {
+        assetsDirs: [
+        '<%= config.dist %>',
+        '<%= config.dist %>/images'
+      ]
+      },
+      html: ['<%= config.dist %>/{,*/}*.html'],
+      css: ['<%= config.dist %>/styles/{,*/}*.css']
     },
 
     watch: {
@@ -160,6 +287,26 @@ module.exports = function (grunt) {
     'connect:livereload',
     'watch'
   ]);
+
+   grunt.registerTask('build', [
+    'clean:dist',
+    'nunjucks',
+    'wiredep',
+    'useminPrepare',
+    'sass:dist',
+    'copy:styles',
+    'imagemin',
+    'autoprefixer',
+    'concat',
+    'cssmin',
+    'uglify',
+    'copy:dist',
+    'copy:compiledHtml',
+    'filerev',
+    'copy:socialImage',
+    'usemin',
+    'htmlmin'
+    ]);
 
   grunt.registerTask('default', ['serve']);
 };
