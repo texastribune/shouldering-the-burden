@@ -2,6 +2,7 @@
   "name": "newsapps-app-template",
   "private": true,
   "dependencies": {
-    "newsapps-styles": "texastribune/newsapps-styles#~0.4.0"
+    "newsapps-styles": "texastribune/newsapps-styles#~0.4.0",
+    "echojs": "~1.6.0"
   }
 }
