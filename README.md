@@ -21,3 +21,7 @@ From the template's root directory:
 `npm install && bower install`
 
 And away you go!
+
+
+## Maps
+To create the maps, use [https://github.com/duner/d3_texas_pins](https://github.com/duner/d3_texas_pins) and the NYTimes's [SVG Crowbar](http://nytimes.github.io/svg-crowbar/). I ended up using ImageMagik to convert the SVGs to PNGs so that they'd work on more browsers.
