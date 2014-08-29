@@ -288,7 +288,7 @@ module.exports = function (grunt) {
     'watch'
   ]);
 
-   grunt.registerTask('build', [
+  grunt.registerTask('build', [
     'clean:dist',
     'nunjucks',
     'wiredep',
@@ -306,7 +306,7 @@ module.exports = function (grunt) {
     'copy:socialImage',
     'usemin',
     'htmlmin'
-    ]);
+  ]);
 
   grunt.registerTask('default', ['serve']);
 };
